@@ -20,6 +20,9 @@ public class ModelConfiguration : IEntityTypeConfiguration<Model>
         builder.Property(m => m.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(m => m.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(b => b.Brand);
+        builder.HasOne(b => b.Fuel);
+
         builder.HasQueryFilter(m => !m.DeletedDate.HasValue);
     }
 }
