@@ -21,6 +21,7 @@ using NArchitecture.Core.Mailing.MailKit;
 using NArchitecture.Core.Security.DependencyInjection;
 using Application.Services.Brands;
 using Application.Services.Models;
+using Application.Services.Fuels;
 
 namespace Application;
 
@@ -62,6 +63,13 @@ public static class ApplicationServiceRegistration
         services.AddSecurityServices<Guid, int>();
 
         services.AddScoped<IBrandService, BrandManager>();
+        services.AddScoped<IModelService, ModelManager>();
+        services.AddScoped<IFuelService, FuelManager>();
+        services.AddScoped<IBrandService, BrandManager>();
+        services.AddScoped<IFuelService, FuelManager>();
+        services.AddScoped<IFuelService, FuelManager>();
+        services.AddScoped<IBrandService, BrandManager>();
+        services.AddScoped<IFuelService, FuelManager>();
         services.AddScoped<IModelService, ModelManager>();
         return services;
     }

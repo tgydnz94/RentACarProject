@@ -8,7 +8,11 @@ namespace Application.Features.Models.Commands.Create;
 
 public class CreateModelCommand : IRequest<CreatedModelResponse>
 {
+    public Guid BrandId { get; set; }
     public string Name { get; set; }
+    public Guid FuelId { get; set; }
+    public decimal DailyPrice { get; set; }
+    public string ImageUrl { get; set; }
 
     public class CreateModelCommandHandler : IRequestHandler<CreateModelCommand, CreatedModelResponse>
     {

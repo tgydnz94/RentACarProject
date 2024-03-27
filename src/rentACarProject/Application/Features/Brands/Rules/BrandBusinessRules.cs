@@ -39,15 +39,4 @@ public class BrandBusinessRules : BaseBusinessRules
         );
         await BrandShouldExistWhenSelected(brand);
     }
-
-    public async Task BrandNameCannotBeDuplicatedWhenInserted(string name)
-    {
-        Brand? result = await _brandRepository.GetAsync(predicate: b => b.Name.ToLower() == name.ToLower());
-
-        if (result!=null)
-        {
-            throw new BusinessException("Brand Name Exists");
-        }
-
-    }
 }
