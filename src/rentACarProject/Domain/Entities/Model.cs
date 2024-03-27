@@ -6,8 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entities;
-public class Brand : Entity<Guid>
+public class Model : Entity<Guid>
 {
+    public Guid BrandId { get; set; }
     public string Name { get; set; }
-    public virtual ICollection<Model> Models { get; set; }
+    public decimal DailyPrice { get; set; }
+    public string ImageUrl { get; set; }
+    public virtual Brand? Brand { get; set; }
+
 }
